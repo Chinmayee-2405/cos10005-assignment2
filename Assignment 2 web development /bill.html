@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="BELLY UP reservation bill">
+    <meta name="keywords" content="bill, payment, restaurant reservation">
+    <meta name="author" content="Chinmayee Sharma">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | BELLY UP</title>
+
+    <title>Bill | BELLY UP</title>
 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
@@ -11,7 +15,10 @@
 
 <body>
 
- <nav class="navbar">
+<div class="bg-glow"></div>
+
+<header>
+     <nav class="navbar">
          <div class="logo">BELLY UP</div>
 
         <div class="nav-links">
@@ -26,52 +33,39 @@
 
     </nav>
 
-<header>
-    <h1>About BELLY UP</h1>
-    <p>Your Melbourne food discovery companion</p>
+    <section class="page-header">
+        <h1>Your Bill</h1>
+        <p>Reservation payment summary</p>
+    </section>
 </header>
 
 <main class="container">
 
-    <section class="card about-card">
-        <h2>Who We Are</h2>
-        <p class="description">
-            BELLY UP is a Melbourne-based restaurant discovery website made for
-            students, locals and food lovers who want to find great places to eat
-            without spending hours searching online.
-        </p>
-    </section>
+    <section class="card">
+        <h2>Bill Summary</h2>
 
-    <section class="card about-card">
-        <h2>What We Do</h2>
-        <p class="description">
-            Our website helps users explore restaurants, cafes and dessert spots
-            across Melbourne. You can browse recommendations, discover new food
-            places and reserve a table easily.
-        </p>
-    </section>
+        <p><strong>Restaurant:</strong> <span id="billRestaurant">Not selected</span></p>
+        <p><strong>Name:</strong> <span id="billName">Not provided</span></p>
+        <p><strong>Email:</strong> <span id="billEmail">Not provided</span></p>
+        <p><strong>Phone:</strong> <span id="billPhone">Not provided</span></p>
+        <p><strong>Date:</strong> <span id="billDate">Not selected</span></p>
+        <p><strong>Time:</strong> <span id="billTime">Not selected</span></p>
+        <p><strong>Guests:</strong> <span id="billGuests">0</span></p>
 
-    <section class="card about-card">
-        <h2>Why BELLY UP?</h2>
-        <p class="description">
-            Whether you are looking for a quick lunch, a cosy dinner spot or a
-            weekend food adventure, BELLY UP makes it simple to choose the right
-            restaurant based on your mood and preferences.
-        </p>
-    </section>
+        <hr>
 
-    <section class="card about-card">
-        <h2>Our Goal</h2>
-        <p class="description">
-            Our goal is to create a simple, user-friendly and enjoyable food
-            discovery experience for people living, studying or visiting Melbourne.
-        </p>
+        <p><strong>Deposit:</strong> $<span id="billDeposit">0</span></p>
+        <p><strong>Service Fee:</strong> $<span id="billService">5</span></p>
+
+        <h2>Total: $<span id="billTotal">0</span></h2>
+
+        <a href="reservation.html" class="book-btn">Edit Reservation</a>
     </section>
 
 </main>
 
 <footer>
-    Created by Chinmayee Sharma
+    Created by Chinmayee Sharma | 2026
 </footer>
 
 </body>
