@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Restaurant Reservation Form">
+    <meta name="keywords" content="Restaurant, Booking, Reservation">
+    <meta name="author" content="Chinmayee Sharma">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reservation | BELLY UP</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+<div class="bg-glow"></div>
+
+<header>
+     <nav class="navbar">
+         <div class="logo">BELLY UP</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="restaurants.html">Restaurants</a>
+            <a href="recommend.html">Recommend</a>
+            <a href="register.html">Register</a>
+            <a href="reservation.html">Reservation</a>
+            <a href="bill.html" class="active">Bill</a>
+            <a href="about.html">About</a>
+        </div>
+
+    </nav>
+
+    <section class="page-header">
+        <h1>Reserve Your Table</h1>
+        <p>Book your favourite restaurant easily.</p>
+    </section>
+</header>
+
+<main class="container">
+    <section class="form-section">
+
+        <form id="reservationForm" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+
+            <fieldset>
+                <legend>Reservation Details</legend>
+
+                <label for="restaurant">Choose Restaurant</label>
+                <select id="restaurant" name="restaurant" required>
+                    <option value="">Select a restaurant</option>
+                    <option value="Saravanaa Bhavan">Saravanaa Bhavan</option>
+                    <option value="MammaMia">MammaMia</option>
+                    <option value="More Coffee">More Coffee</option>
+                    <option value="Gyro Gyro Oli">Gyro Gyro Oli</option>
+                    <option value="Lune Croissanterie">Lune Croissanterie</option>
+                    <option value="Stalactites">Stalactites</option>
+                </select>
+
+                <label for="deposit">Deposit Amount</label>
+                <input type="text" id="deposit" name="deposit" readonly>
+
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="date">Reservation Date</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Reservation Time</label>
+                <input type="time" id="time" name="time" required>
+
+                <label for="guests">Number of Guests</label>
+                <input type="number" id="guests" name="guests" min="1" max="20" required>
+
+                <label for="message">Special Requests</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Payment Details</legend>
+
+                <label>Deposit Method</label>
+
+                <div class="radioinput">
+                    <input type="radio" id="voucher" name="paymentMethod" value="voucher">
+                    <label for="voucher">Voucher</label>
+
+                    <input type="radio" id="online" name="paymentMethod" value="online">
+                    <label for="online">Online Payment</label>
+                </div>
+
+                <div id="voucherBox" class="hidden">
+                    <label for="voucherCode">Voucher Code</label>
+                    <input type="text" id="voucherCode" name="voucherCode" placeholder="12 digit voucher code">
+                </div>
+
+                <div id="cardBox" class="hidden">
+                    <label for="cardNumber">Credit Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="Visa/MC 16 digits or Amex 15 digits">
+                </div>
+
+                <label for="billingEmail">Billing Email Address</label>
+                <input type="email" id="billingEmail" name="billingEmail">
+
+                <div class="radioinput">
+                    <input type="checkbox" id="sameEmail">
+                    <label for="sameEmail">Same as email address</label>
+                </div>
+            </fieldset>
+
+            <p id="reservationError" class="error"></p>
+
+            <div class="buttoninput">
+                <input type="submit" value="Reserve Table">
+            </div>
+
+        </form>
+
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 BELLY UP | Created by Chinmayee Sharma</p>
+</footer>
+
+</body>
+</html>
