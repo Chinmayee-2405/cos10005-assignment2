@@ -1,0 +1,471 @@
+:root {
+    --bg: #f8f5f0;
+    --card-bg: #ffffff;
+    --accent: #8b3a3a;
+    --accent-light: #f2e5e5;
+    --text-main: #333333;
+    --text-dim: #666666;
+    --border: #e6d6d6;
+    --white: #ffffff;
+    --error: #b00020;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.bg-glow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top, #fff0e6, #f8f5f0);
+    z-index: -1;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: var(--accent);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links .active::after {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo {
+    color: var(--accent);
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+header {
+    text-align: center;
+    padding: 70px 20px 50px;
+}
+
+header h1,
+.hero h1,
+.page-header h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+header p,
+.hero p,
+.page-header p {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card,
+.intro-card,
+.result-box,
+form {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 25px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.card {
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card h2,
+.intro-card h2,
+.result-box h2 {
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.description {
+    color: var(--text-main);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.location {
+    color: var(--text-dim);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.category {
+    display: inline-block;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.food-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 20px;
+}
+
+.food-preview img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 2px solid var(--border);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    transition: 0.3s;
+}
+
+.food-preview img:hover {
+    transform: scale(1.05);
+}
+
+.feature-image {
+    width: 180px;
+    height: auto;
+    display: block;
+    margin: 25px auto 0;
+    border-radius: 18px;
+}
+
+.card ul {
+    text-align: left;
+    display: inline-block;
+    margin: 15px auto;
+    padding-left: 20px;
+}
+
+.card li {
+    margin-bottom: 8px;
+}
+
+.main-btn,
+.book-btn,
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    border: 1px solid var(--accent);
+    border-radius: 30px;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: bold;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-btn:hover,
+.book-btn:hover,
+.btn:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.about-card {
+    background: var(--card-bg);
+    border-radius: 28px;
+    padding: 40px;
+    margin-bottom: 35px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, #8b3a3a, #d89b7c);
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+}
+
+.about-card h2 {
+    color: var(--accent);
+    font-size: 2rem;
+    margin-bottom: 18px;
+}
+
+form {
+    max-width: 850px;
+    margin: auto;
+}
+
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    margin-bottom: 30px;
+    padding: 25px;
+}
+
+legend {
+    color: var(--accent);
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.textinput,
+form label {
+    margin-bottom: 15px;
+}
+
+.textinput label,
+.radiolabel,
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    background: white;
+    color: var(--text-main);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(139, 58, 58, 0.12);
+}
+
+textarea {
+    min-height: 100px;
+}
+
+.radioinput input {
+    width: auto;
+    margin-right: 6px;
+}
+
+.radioinput label {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.buttoninput input {
+    background: var(--accent);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.buttoninput input:hover {
+    background: #6f2d2d;
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    color: var(--error);
+    font-weight: bold;
+    margin-top: 10px;
+    white-space: pre-line;
+}
+
+.result-box {
+    max-width: 850px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.result-box h2 {
+    font-size: 2rem;
+}
+
+.bill-card {
+    max-width: 750px;
+    margin: auto;
+    text-align: left;
+}
+
+.bill-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bill-card p {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.bill-card hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 25px 0;
+}
+
+.bill-total {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--accent);
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 60px;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header {
+        padding: 60px 20px 35px;
+    }
+
+    header h1,
+    .hero h1,
+    .page-header h1 {
+        font-size: 2.6rem;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card,
+    .intro-card,
+    .result-box,
+    form {
+        padding: 22px;
+    }
+
+    .food-preview img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .about-card {
+        padding: 30px;
+    }
+
+    .about-card h2 {
+        font-size: 1.6rem;
+    }
+}
